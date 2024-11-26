@@ -47,13 +47,6 @@
         animation: rotatePlanet 3s ease-in-out infinite;
       }
 
-      @font-face {
-        font-family: "Rexova";
-        font-style: normal;
-        font-weight: normal;
-        src: local("Rexova"), url("../fonts/Rexova.woff") format("woff");
-      }
-
       .kode-mono-regular {
         font-family: "Kode Mono", monospace;
         font-optical-sizing: auto;
@@ -72,7 +65,7 @@
       }
 
       .stars {
-        background: #131420 url("../stars.png") repeat;
+        background: #131420 url("../stars.png");
         position: absolute;
         top: 0;
         bottom: 0;
@@ -83,7 +76,7 @@
       }
 
       /* Animasi bintang jatuh */
-      @keyframes shootingStar {
+      @keyframes shootingStar1 {
         0% {
           transform: translateX(0) translateY(0);
           opacity: 1;
@@ -94,13 +87,53 @@
         }
       }
 
-      .shooting-star {
+      @keyframes shootingStar2 {
+        0% {
+          transform: translateX(0) translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-150px) translateY(250px);
+          opacity: 0;
+        }
+      }
+
+      @keyframes shootingStar3 {
+        0% {
+          transform: translateX(0) translateY(0);
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(-250px) translateY(150px);
+          opacity: 0;
+        }
+      }
+
+      .shooting-star1 {
         position: absolute;
         width: 2px;
         height: 2px;
         background: white;
         border-radius: 50%;
-        animation: shootingStar 1s linear infinite;
+        animation: shootingStar1 1s linear infinite;
+      }
+
+      .shooting-star2 {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        animation: shootingStar2 1.5s linear infinite;
+      }
+
+      .shooting-star3 {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: white;
+        border-radius: 50%;
+        animation: shootingStar3 1.2s linear infinite;
       }
     </style>
   </head>
@@ -110,11 +143,11 @@
   >
     <div class="stars"></div>
     <!-- Bintang Jatuh -->
-    <div class="shooting-star" style="top: 10%; left: 30%;"></div>
-    <div class="shooting-star" style="top: 20%; left: 50%;"></div>
-    <div class="shooting-star" style="top: 30%; left: 70%;"></div>
-    <div class="shooting-star" style="top: 10%; left: 80%;"></div>
-    <div class="shooting-star" style="top: 20%; left: 90%;"></div>
+    <div class="shooting-star1" style="top: 10%; left: 80%;"></div>
+    <div class="shooting-star2" style="top: 20%; left: 90%;"></div>
+    <div class="shooting-star3" style="top: 30%; left: 70%;"></div>
+    <div class="shooting-star1" style="top: 10%; left: 30%;"></div>
+    <div class="shooting-star2" style="top: 20%; left: 50%;"></div>
     <!-- Planet -->
     <img
       src="../404/planet1.svg"
