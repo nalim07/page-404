@@ -65,7 +65,7 @@
       }
 
       .stars {
-        background: #131420 url("../stars.png");
+        background: url("../stars.png");
         position: absolute;
         top: 0;
         bottom: 0;
@@ -73,6 +73,7 @@
         right: 0;
         display: block;
         z-index: -1;
+        background-size: cover;
       }
 
       /* Animasi bintang jatuh */
@@ -139,7 +140,7 @@
   </head>
 
   <body
-    class="text-white flex justify-center items-center min-h-screen min-w-full"
+    class="bg-[#131420] text-white flex justify-center items-center min-h-screen min-w-full"
   >
     <div class="stars"></div>
     <!-- Bintang Jatuh -->
