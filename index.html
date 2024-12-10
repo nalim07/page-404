@@ -1,358 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404 - Page Not Found</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Page Not Found</title>
 
-    <style>
-      /* Animasi kelap-kelip */
-      @keyframes twinkle {
-        0% {
-          opacity: 0.2;
-        }
-        50% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0.2;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Animasi kelap-kelip */
+    @keyframes twinkle {
+      0% {
+        opacity: 0.2;
       }
 
-      .twinkle {
-        animation: twinkle 2s infinite ease-in-out;
+      50% {
+        opacity: 1;
       }
 
-      @keyframes rotatePlanet {
-        0% {
-          transform: rotate(0deg);
-        }
-        50% {
-          transform: rotate(10deg); /* Putar ke kanan */
-        }
-        100% {
-          transform: rotate(0deg); /* Kembali ke posisi awal */
-        }
+      100% {
+        opacity: 0.2;
+      }
+    }
+
+    .twinkle {
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes rotatePlanet {
+      0% {
+        transform: rotate(0deg);
       }
 
-      .rotate-planet {
-        animation: rotatePlanet 3s ease-in-out infinite;
+      50% {
+        transform: rotate(10deg);
+        /* Putar ke kanan */
       }
 
-      .kode-mono-regular {
-        font-family: "Kode Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
+      100% {
+        transform: rotate(0deg);
+        /* Kembali ke posisi awal */
+      }
+    }
+
+    .rotate-planet {
+      animation: rotatePlanet 3s ease-in-out infinite;
+    }
+
+    .kode-mono-regular {
+      font-family: "Kode Mono", monospace;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    p,
+    h2 {
+      font-family: "Kode Mono";
+    }
+
+    .stars {
+      background: url("../stars.png");
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: block;
+      z-index: -1;
+      background-size: cover;
+    }
+
+    /* Animasi bintang jatuh */
+    @keyframes shootingStar1 {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
       }
 
-      body {
-        margin: 0;
-        overflow: hidden;
+      100% {
+        transform: translateX(-200px) translateY(200px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes shootingStar2 {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
       }
 
-      p,
-      h2 {
-        font-family: "Kode Mono";
+      100% {
+        transform: translateX(-150px) translateY(250px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes shootingStar3 {
+      0% {
+        transform: translateX(0) translateY(0);
+        opacity: 1;
       }
 
-      .stars {
-        background: url("../stars.png");
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: block;
-        z-index: -1;
-        background-size: cover;
+      100% {
+        transform: translateX(-250px) translateY(150px);
+        opacity: 0;
       }
+    }
 
-      /* Animasi bintang jatuh */
-      @keyframes shootingStar1 {
-        0% {
-          transform: translateX(0) translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateX(-200px) translateY(200px);
-          opacity: 0;
-        }
-      }
+    .shooting-star1 {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: shootingStar1 1s linear infinite;
+    }
 
-      @keyframes shootingStar2 {
-        0% {
-          transform: translateX(0) translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateX(-150px) translateY(250px);
-          opacity: 0;
-        }
-      }
+    .shooting-star2 {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: shootingStar2 1.5s linear infinite;
+    }
 
-      @keyframes shootingStar3 {
-        0% {
-          transform: translateX(0) translateY(0);
-          opacity: 1;
-        }
-        100% {
-          transform: translateX(-250px) translateY(150px);
-          opacity: 0;
-        }
-      }
+    .shooting-star3 {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: shootingStar3 1.2s linear infinite;
+    }
+  </style>
+</head>
 
-      .shooting-star1 {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        animation: shootingStar1 1s linear infinite;
-      }
+<body class="bg-[#131420] text-white flex justify-center items-center min-h-screen min-w-full">
+  <div class="stars"></div>
+  <!-- Bintang Jatuh -->
+  <div class="shooting-star1" style="top: 10%; left: 80%;"></div>
+  <div class="shooting-star2" style="top: 20%; left: 90%;"></div>
+  <div class="shooting-star3" style="top: 30%; left: 70%;"></div>
+  <div class="shooting-star1" style="top: 10%; left: 30%;"></div>
+  <div class="shooting-star2" style="top: 20%; left: 50%;"></div>
+  <!-- Planet -->
+  <img src="../404/planet1.svg" alt="planet"
+    class="absolute top-0 left-0 w-24 z-10 hidden md:block md:w-48 lg:w-52 lg:-top-16 lg:-left-10" />
+  <!-- Planet Polos -->
+  <svg class="absolute top-10 left-64 w-16 z-10 hidden md:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+    fill="white">
+    <circle cx="12" cy="12" r="10" />
+  </svg>
+  <!-- Saturnus -->
+  <img src="../404/saturnus1.svg" alt="saturnus"
+    class="absolute top-5 left-5 w-16 z-10 rotate-planet md:hidden md:w-24 md:top-96" />
+  <!-- Small Planet -->
+  <img src="../404/planet3.svg" alt="planet"
+    class="absolute top-20 right-5 w-16 z-10 block md:w-24 md:top-16 md:right-10" />
+  <!-- Saturnus 2 -->
+  <img src="../404/saturnus2.svg" alt="planet"
+    class="absolute top-20 right-5 w-16 z-10 hidden md:hidden lg:block lg:w-32 lg:top-0 lg:right-96 rotate-planet" />
+  <!-- Big Planet -->
+  <img src="../404/planet4.svg" alt="planet"
+    class="absolute top-20 right-5 w-16 hidden md:block md:w-48 md:top-60 md:-right-16 lg:w-60 lg:top-52 lg:right-10" />
 
-      .shooting-star2 {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        animation: shootingStar2 1.5s linear infinite;
-      }
+  <!-- Stars -->
+  <svg class="absolute top-5 right-20 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+    viewBox="0 0 16 16" fill="none">
+    <path
+      d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+      fill="white" />
+  </svg>
 
-      .shooting-star3 {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        animation: shootingStar3 1.2s linear infinite;
-      }
-    </style>
-  </head>
-
-  <body
-    class="bg-[#131420] text-white flex justify-center items-center min-h-screen min-w-full"
-  >
-    <div class="stars"></div>
-    <!-- Bintang Jatuh -->
-    <div class="shooting-star1" style="top: 10%; left: 80%;"></div>
-    <div class="shooting-star2" style="top: 20%; left: 90%;"></div>
-    <div class="shooting-star3" style="top: 30%; left: 70%;"></div>
-    <div class="shooting-star1" style="top: 10%; left: 30%;"></div>
-    <div class="shooting-star2" style="top: 20%; left: 50%;"></div>
-    <!-- Planet -->
-    <img
-      src="../404/planet1.svg"
-      alt="planet"
-      class="absolute top-0 left-0 w-24 z-10 hidden md:block md:w-48 lg:w-52 lg:-top-16 lg:-left-10"
-    />
-    <!-- Planet Polos -->
-    <svg
-      class="absolute top-10 left-64 w-16 z-10 hidden md:block"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="white"
-    >
-      <circle cx="12" cy="12" r="10" />
-    </svg>
-    <!-- Saturnus -->
-    <img
-      src="../404/saturnus1.svg"
-      alt="saturnus"
-      class="absolute top-5 left-5 w-16 z-10 rotate-planet md:hidden md:w-24 md:top-96"
-    />
-    <!-- Small Planet -->
-    <img
-      src="../404/planet3.svg"
-      alt="planet"
-      class="absolute top-20 right-5 w-16 z-10 block md:w-24 md:top-16 md:right-10"
-    />
-    <!-- Saturnus 2 -->
-    <img
-      src="../404/saturnus2.svg"
-      alt="planet"
-      class="absolute top-20 right-5 w-16 z-10 hidden md:hidden lg:block lg:w-32 lg:top-0 lg:right-96 rotate-planet"
-    />
-    <!-- Big Planet -->
-    <img
-      src="../404/planet4.svg"
-      alt="planet"
-      class="absolute top-20 right-5 w-16 hidden md:block md:w-48 md:top-60 md:-right-16 lg:w-60 lg:top-52 lg:right-10"
-    />
-
-    <!-- Stars -->
-    <svg
-      class="absolute top-5 right-20 twinkle"
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-    >
-      <path
-        d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-        fill="white"
-      />
-    </svg>
-
-    <div
-      class="relative flex justify-center items-center w-full h-full mx-auto"
-    >
-      <!-- Background Stars -->
-      <div class="absolute inset-0">
-        <!-- SVG Stars with animation -->
-        <svg
-          class="absolute top-5 right-20 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          class="absolute top-20 left-72 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          class="absolute top-40 left-80 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          class="absolute top-80 left-10 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          class="absolute bottom-5 left-10 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          class="absolute top-80 right-32 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          class="absolute bottom-0 right-0 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-        <svg
-          class="absolute -bottom-20 left-10 twinkle"
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
-            fill="white"
-          />
-        </svg>
-      </div>
-
-      <!-- 404 Error -->
-      <div
-        class="absolute inset-0 flex flex-col justify-center items-center text-center"
-      >
-        <div class="relative">
-          <!-- Astronaut -->
-          <img
-            src="../404/error-animate.gif"
-            alt="astronaut"
-            class="md:w-1/2 lg:w-8/12 mx-auto"
-          />
-          <h2
-            class="mt-2 px-2 text-white text-3xl lg:text-4xl font-bold leading-tight z-10"
-          >
-            404 Page Not Found
-          </h2>
-        </div>
-        <div class="flex flex-col justify-center items-center mt-2 gap-2">
-          <p class="text-white text-2xl lg:text-2xl leading-tight z-10">
-            The page you are looking for could not be found
-          </p>
-          <button
-            class="bg-[#6E62E5] text-white w-fit py-1 px-2 my-2 lg:text-lg rounded-lg hover:bg-[#6E62E5]/80 transition"
-            style="font-family: 'Kode Mono', monospace"
-          >
-            Go Back
-          </button>
-        </div>
-      </div>
+  <div class="relative flex justify-center items-center w-full h-full mx-auto">
+    <!-- Background Stars -->
+    <div class="absolute inset-0">
+      <!-- SVG Stars with animation -->
+      <svg class="absolute top-5 right-20 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
+      <svg class="absolute top-20 left-72 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
+      <svg class="absolute top-40 left-80 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
+      <svg class="absolute top-80 left-10 twinkle" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
+      <svg class="absolute bottom-5 left-10 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
+      <svg class="absolute top-80 right-32 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
+      <svg class="absolute bottom-0 right-0 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
+      <svg class="absolute -bottom-20 left-10 twinkle" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+        viewBox="0 0 16 16" fill="none">
+        <path
+          d="M8.92923 6.76136L15.6149 7.86312L8.92923 8.96487L7.82748 15.6506L6.72571 8.96487L0.0400391 7.86312L6.72571 6.76136L7.82748 0.0756836L8.92923 6.76136Z"
+          fill="white" />
+      </svg>
     </div>
 
-    <!-- Footer Saturnus -->
-    <img
-      src="../404/saturnus1.svg"
-      alt="planet"
-      class="absolute bottom-16 left-32 w-24 z-10 rotate-planet hidden md:block lg:top-72"
-    />
-    <script type="module" src="/main.js"></script>
-  </body>
+    <!-- 404 Error -->
+    <div class="absolute inset-0 flex flex-col justify-center items-center text-center">
+      <div class="relative">
+        <!-- Astronaut -->
+        <img src="../404/error-animate.gif" alt="astronaut" class="md:w-1/2 lg:w-8/12 mx-auto" />
+        <h2 class="mt-2 px-2 text-white text-3xl lg:text-4xl font-bold leading-tight z-10">
+          404 Page Not Found
+        </h2>
+      </div>
+      <div class="flex flex-col justify-center items-center mt-2 gap-2">
+        <p class="text-white text-2xl lg:text-2xl leading-tight z-10">
+          The page you are looking for could not be found
+        </p>
+        <button
+          class="bg-[#6E62E5] text-white w-fit py-1 px-2 my-2 lg:text-lg rounded-lg hover:bg-[#6E62E5]/80 transition"
+          style="font-family: 'Kode Mono', monospace">
+          Go Back
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Saturnus -->
+  <img src="../404/saturnus1.svg" alt="planet"
+    class="absolute bottom-16 left-32 w-24 z-10 rotate-planet hidden md:block lg:top-72" />
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
